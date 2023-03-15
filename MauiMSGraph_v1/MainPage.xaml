@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMSGraph_v1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0">
+
+
+            <Button
+                x:Name="GetUserInfoBtn"
+                Text="USER"
+                SemanticProperties.Hint="Loads user information from Microsoft Graph"
+                Clicked="GetUserInfoBtn_Clicked"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="200"/>
+            <Button
+                x:Name="Actualizaciontabla"
+                Text="Actualizar"
+                Clicked="Actualizaciontabla_Clicked"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="200"/>
+
+            <Grid BackgroundColor="Black"
+                  WidthRequest="610">
+
+                <Button
+                x:Name="Nuevo_evento"
+                Text="&#x2795; New event"
+                SemanticProperties.Hint="Genera una nueva ventana para crear un nuevo evento"
+                Clicked="Nuevo_evento_Clicked"
+                HorizontalOptions="Start"
+                WidthRequest="300"
+                />
+
+                <Button
+                x:Name="Editar_evento"
+                Text="&#x270F;&#xFE0F; Edit event"
+                SemanticProperties.Hint="Genera una nueva ventana para editar un evento"
+                Clicked="Editar_evento_Clicked"
+                HorizontalOptions="End"
+                WidthRequest="300"
+                />
+
+            </Grid>
+            
+            <ScrollView>
+                <Grid BackgroundColor="Black"
+                        WidthRequest="800"
+                        HeightRequest="500"
+                        x:Name="Eventos_Principal">
+                
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0"
+                            Grid.Row="0"
+                        x:Name="ID_Event"
+                        Text="ID"
+                        SemanticProperties.HeadingLevel="Level1"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        TextColor="White"/>
+                
+                    <Label Grid.Column="1"
+                            Grid.Row="0"
+                        x:Name="Name_Event"
+                        Text="Name"
+                        SemanticProperties.HeadingLevel="Level1"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        TextColor="White"/>
+                
+                    <Label Grid.Column="2"
+                            Grid.Row="0"
+                        x:Name="Hora_Event"
+                        Text="Hour"
+                        SemanticProperties.HeadingLevel="Level1"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        TextColor="White"/>
+                
+                    <Label Grid.Column="3"
+                            Grid.Row="0"
+                        x:Name="Fecha_Event"
+                        Text="Date"
+                        SemanticProperties.HeadingLevel="Level1"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        TextColor="White"/>
+                
+                    <Label Grid.Column="4"
+                            Grid.Row="0"
+                        x:Name="Location_Event"
+                        Text="Location"
+                        SemanticProperties.HeadingLevel="Level1"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        TextColor="White"/>
+
+                </Grid>
+            </ScrollView>
+            
+            <ScrollView>
+                <CollectionView ItemsSource="{Binding People}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding RowNumber}" />
+                                <Label Text="{Binding Name}" Grid.Column="1" />
+                                <Label Text="{Binding Age}" Grid.Column="2" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

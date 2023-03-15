@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMSGraph_v1.NewEvent"
+             Title="NewEvent">
+    <VerticalStackLayout>
+
+        
+        <Entry x:Name="entry"
+               Placeholder="Enter de name of the new event"
+               TextChanged="entry_TextChanged"
+               Completed="entry_Completed" 
+               WidthRequest="650"
+               Margin="0,10,0,20"/>
+
+        <Label x:Name="label_cuando"
+               Text="WHEN?"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Margin="0,10,0,10"/>
+
+        <TimePicker Time="{Binding SelectedTime}"
+                    x:Name="Timepicker"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    TextColor="Black"/>
+        
+        <DatePicker Date="{Binding SelectedDate}"
+                    MinimumDate="{Binding MinDate}"
+                    MaximumDate="{Binding MaxDate}"
+                    x:Name="Datepicker"
+                    HorizontalOptions="Center"/>
+
+        <Label x:Name="label_donde"
+               Text="WHERE DO YOU WANT TO VISUALICE THIS EVENT?"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Margin="0,10,0,10"/>
+
+        <RadioButton x:Name="ToDo"
+                     CheckedChanged="ToDo_CheckedChanged"
+                     Content="ToDoList"
+                     GroupName="group1"
+                     HorizontalOptions="Center"/>
+
+        <RadioButton x:Name="MicrosoftCalen"
+                     CheckedChanged="MicrosoftCalen_CheckedChanged"
+                     Content="MicrosoftCalendar"
+                     GroupName="group1"
+                     HorizontalOptions="Center"/>
+        
+        <RadioButton x:Name="Both_"
+                     CheckedChanged="Both__CheckedChanged"
+                     Content="Both"
+                     GroupName="group1"
+                     HorizontalOptions="Center"/>
+
+        <Grid WidthRequest="610">
+        
+            <Button x:Name="Accept"
+                Text="Accept"
+                SemanticProperties.Hint="hace que lo que se ha introducido anteriormente sea enviado mediante microsoft graph"
+                Clicked="Accept_Clicked"
+                HorizontalOptions="Start"
+                WidthRequest="300"/>
+            <Button
+                x:Name="Volver"
+                Text="Back"
+                SemanticProperties.Hint="Vuelve a la ventana anterior"
+                Clicked="Return_clicked"
+                HorizontalOptions="End"
+                WidthRequest="300"/>
+
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

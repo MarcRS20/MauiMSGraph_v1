@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMSGraph_v1.EditEvent"
+             Title="EditEvent">
+    
+    <VerticalStackLayout>
+
+        <ScrollView>
+            <StackLayout>
+                <Label 
+                Text="Welcome to .NET MAUI!"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"/>
+
+                <Label
+                x:Name="TituloEditEvent"
+                Text="Choose the event that you want to modificate"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                FontSize="Medium"
+                Margin="0,0,0,10"/>
+                
+                
+
+                <Grid x:Name="GridEditEvent"
+                BackgroundColor="White"
+                            WidthRequest="800"
+                            HeightRequest="500"
+                                Margin="0,0,0,10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="160"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0"
+                                Grid.Row="0"
+                            x:Name="ID_Event"
+                            Text="ID"
+                            SemanticProperties.HeadingLevel="Level1"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            TextColor="Black"/>
+
+                    <Label Grid.Column="1"
+                                Grid.Row="0"
+                            x:Name="Name_Event"
+                            Text="Name"
+                            SemanticProperties.HeadingLevel="Level1"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            TextColor="Black"/>
+
+                    <Label Grid.Column="2"
+                                Grid.Row="0"
+                            x:Name="Hora_Event"
+                            Text="Hour"
+                            SemanticProperties.HeadingLevel="Level1"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            TextColor="Black"/>
+
+                    <Label Grid.Column="3"
+                                Grid.Row="0"
+                            x:Name="Fecha_Event"
+                            Text="Date"
+                            SemanticProperties.HeadingLevel="Level1"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            TextColor="Black"/>
+
+                    <Label Grid.Column="4"
+                                Grid.Row="0"
+                            x:Name="Location_Event"
+                            Text="Location"
+                            SemanticProperties.HeadingLevel="Level1"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            TextColor="Black"/>
+
+                </Grid>
+
+
+                <Grid WidthRequest="610">
+                    
+                    <Button x:Name="Accept"
+                    Text="Accept"
+                    SemanticProperties.Hint="Acepta la seleccion de evento para modificarlo"
+                    Clicked="Accept_Clicked"
+                    HorizontalOptions="Start"
+                    WidthRequest="300"/>
+                    
+                    <Button
+                    x:Name="Volver"
+                    Text="Back"
+                    SemanticProperties.Hint="Vuelve a la ventana anterior"
+                    Clicked="Return_clicked"
+                    HorizontalOptions="End"
+                    WidthRequest="300"/>
+                    
+                </Grid>
+            </StackLayout>
+
+        </ScrollView>
+
+        
+
+    </VerticalStackLayout>
+</ContentPage>
